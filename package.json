@@ -22,9 +22,6 @@
     "wrapper",
     "unified"
   ],
-  "peerDependencies": {
-    "unified": "^10.0.0"
-  },
   "devDependencies": {
     "@types/hast": "^3.0.4",
     "@types/jest": "^29.5.14",
