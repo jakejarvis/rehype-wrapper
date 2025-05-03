@@ -1,6 +1,6 @@
 {
   "name": "rehype-wrapper",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A rehype plugin that wraps the entire markdown HTML in a new div",
   "license": "MIT",
   "author": "Jake Jarvis <jake@jarv.is> (https://jarv.is)",
