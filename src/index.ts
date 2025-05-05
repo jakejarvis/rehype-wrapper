@@ -8,6 +8,8 @@ import type { Element } from 'hast';
 interface RehypeWrapperOptions {
   /** CSS class name for the wrapper div */
   className?: string;
+  /** Tag name for the wrapper element (e.g., 'div', 'section', 'article') */
+  tagName?: string;
   /** Additional attributes to add to the wrapper div */
   attributes?: Record<string, string | number | boolean>;
 }
@@ -20,6 +22,7 @@ interface RehypeWrapperOptions {
  */
 const rehypeWrapper: Plugin<[RehypeWrapperOptions?], Parent> = (options = {}) => {
   const className = options.className || 'markdown';
+  const tagName = options.tagName || 'div';
   const attributes = options.attributes || {};
   
   return (tree: Parent) => {
@@ -35,9 +38,9 @@ const rehypeWrapper: Plugin<[RehypeWrapperOptions?], Parent> = (options = {}) =>
     // Create the wrapper element
     const wrapper: Element = {
       type: 'element',
-      tagName: 'div',
+      tagName,
       properties: wrapperAttributes,
-      children: children as Element["children"],
+      children: children as Element['children'],
       position: tree.position
     };
     
